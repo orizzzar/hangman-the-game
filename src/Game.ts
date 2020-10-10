@@ -18,8 +18,8 @@ class Game {
     private readonly ctx: CanvasRenderingContext2D;
 
     // The game screen components
-    private title: TextBlock;
-    private word: TextBlock;
+    private title: TextString;
+    private word: TextString;
 
     // The hangman parts
     private base: Rectangle;
@@ -43,8 +43,8 @@ class Game {
         const cx = this.canvas.width / 2;
         const cy = this.canvas.height / 2;
 
-        this.title = new TextBlock(cx, 70, "Hangman, the game");
-        this.word = new TextBlock(cx, 220, "_ _ _ _ _ _ _ _");
+        this.title = new TextString(cx, 70, "Hangman, the game");
+        this.word = new TextString(cx, 220, "_ _ _ _ _ _ _ _");
 
         // The base of the hangman
         this.base = new Rectangle(cx - 300, cy * 1.75, 600, 50);
