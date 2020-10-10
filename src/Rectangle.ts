@@ -1,18 +1,38 @@
 /**
- * Responsible for drawing a rectangle on the canvas.
+ * Responsible for drawing a rectangle on the canvas. It utilyzes the 
+ * `CanvasRenderingContext2D.rect()` method of the canvas 2D API to add a
+ * rectangular shape to the canvas.
+ * 
+ * @see [CanvasRenderingContext2D.rect()](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/rect)
+ * 
+ * @author BugSlayer
  */
 class Rectangle {
 
+    /**
+     * The x-axis coordinate of the rectangle's starting point.
+     */
     public x: number;
     
 
+    /**
+     * The y-axis coordinate of the rectangle's starting point.
+     */
     public y: number;
     
 
+    /**
+     * The rectangle's width. Positive values are to the right, and negative
+     * to the left.
+     */
     public width: number;
     
 
+    /**
+     * The rectangle's height. Positive values are down, and negative are up.
+     */
     public height: number;
+
 
     /**
      * Sets the thickness of lines for this rectangle.
@@ -30,11 +50,13 @@ class Rectangle {
      */
     public strokeStyle: string | CanvasGradient | CanvasPattern = "white";
 
+
     /**
      * If `true`, the rectangle will be filled, using the current fillStyle.
      * Otherwise it will be stroked with the current lineWidth and strokeStyle.
      */
     public fill: boolean = true;
+
 
     /**
      * The fillStyle of this text. Can be set to a color or some other style.
@@ -45,7 +67,14 @@ class Rectangle {
 
 
     /**
-     * constructor
+     * constructs a new object of this class
+     * 
+     * @param {number} x The x-axis coordinate of the rectangle's starting point.
+     * @param {number} y The y-axis coordinate of the rectangle's starting point.
+     * @param {number} width The rectangle's width. Positive values are to the 
+     * right, and negative to the left.
+     * @param {number} height The rectangle's height. Positive values are down, 
+     * and negative are up.
      */
     public constructor(x: number, y: number, width: number, height: number) {
         this.x = x;
@@ -54,6 +83,7 @@ class Rectangle {
         this.height = height;
     }
 
+    
     /**
      * Draws the current rectangle with the current settings to the specified
      * CanvasRenderingContext2D.
