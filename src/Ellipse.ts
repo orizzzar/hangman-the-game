@@ -7,7 +7,7 @@
  * 
  * @author BugSlayer
  */
-class Ellips {
+class Ellipse {
 
     /**
      * The x-axis (horizontal) coordinate of the ellipse's center.
