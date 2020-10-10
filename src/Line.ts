@@ -1,18 +1,41 @@
 /**
- * Responsible for drawing a line to the canvas.
+ * Responsible for drawing a single line to the canvas. It utilyzes the 
+ * `CanvasRenderingContext2D.lineTo()` method of the canvas 2D API. This class
+ * is meant to simplify the complexity of using the concept of paths that the
+ * API uses to make it easy to draw just a single line.
+ * 
+ * @see [CanvasRenderingContext2D.lineTo()](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineTo)
+ * 
+ * @author BugSlayer
  */
 class Line {
 
+    /**
+     * The x-axis (horizontal) coordinate of the line start.
+     */
     public x1: number;
 
-    public y1: number;
-
-    public x2: number;
-
-    public y2: number;
 
     /**
-     * Sets the thickness of lines for this rectangle.
+     * The y-axis (vertical) coordinate of the line start.
+     */
+    public y1: number;
+
+
+    /**
+     * The x-axis (horizontal) coordinate of the line end.
+     */
+    public x2: number;
+
+
+    /**
+     * The y-axis (vertical) coordinate of the line end.
+     */
+    public y2: number;
+
+
+    /**
+     * Sets the thickness of lines for this line.
      * 
      * @see [CanvasRenderingContext2D.lineWidth](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineWidth)
      */
@@ -20,7 +43,7 @@ class Line {
 
 
     /**
-     * The strokeStyle of this rectangle. Can be set to a color or some other 
+     * The strokeStyle of this line. Can be set to a color or some other 
      * style.
      * 
      * @see [CanvasRenderingContext2D.strokeStyle](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/strokeStyle)
@@ -28,6 +51,13 @@ class Line {
     public strokeStyle: string | CanvasGradient | CanvasPattern = "white";
 
 
+    /**
+     * 
+     * @param {number} x1 The x-axis (horizontal) coordinate of the line start.
+     * @param {number} y1 The y-axis (vertical) coordinate of the line start.
+     * @param {number} x2 The x-axis (horizontal) coordinate of the line end.
+     * @param {number} y2 The y-axis (vertical) coordinate of the line end.
+     */
     public constructor(x1: number, y1: number, x2: number, y2: number) {
         this.x1 = x1;
         this.y1 = y1;
@@ -35,6 +65,7 @@ class Line {
         this.y2 = y2;
     }
 
+    
     /**
      * Draws the current line with the current settings to the specified
      * CanvasRenderingContext2D.
