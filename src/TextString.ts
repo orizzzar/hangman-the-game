@@ -89,11 +89,13 @@ class TextString {
      * @param {CanvasRenderingContext2D} ctx - The renderingcontext to draw on 
      */
     public drawText(ctx: CanvasRenderingContext2D) {
+        ctx.save();
         ctx.font = `${this.fontSize}px ${this.font}`;
         ctx.fillStyle = this.fillStyle;
         ctx.textAlign = this.textAlign;
         ctx.textBaseline = this.textBaseline;
         ctx.fillText(this.text, this.x, this.y);
+        ctx.restore();
     }
 
 }

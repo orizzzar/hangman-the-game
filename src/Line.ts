@@ -73,9 +73,13 @@ class Line {
      * @param {CanvasRenderingContext2D} ctx - The renderingcontext to draw on 
      */
     public drawLine(ctx: CanvasRenderingContext2D) {
+        ctx.save();
         ctx.beginPath();              // Start a new path
         ctx.moveTo(this.x1, this.y1); // Move the pen to (x1, y1)
         ctx.lineTo(this.x2, this.y2); // Draw a line to (x1, y2)
+        ctx.lineWidth = this.lineWidth;
+        ctx.strokeStyle = this.strokeStyle;
         ctx.stroke();                 // Render the path
+        ctx.restore();
     }
 }

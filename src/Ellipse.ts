@@ -120,6 +120,8 @@ class Ellipse {
      * @param {CanvasRenderingContext2D} ctx - The renderingcontext to draw on 
      */
     public drawCircle(ctx: CanvasRenderingContext2D) {
+        ctx.save();
+        ctx.beginPath();
         ctx.rect(this.x, this.y, this.radiusX, this.radiusY);
         if (this.fill) {
             ctx.fillStyle = this.fillStyle;
@@ -129,6 +131,7 @@ class Ellipse {
             ctx.strokeStyle = this.strokeStyle;
             ctx.stroke();
         }
+        ctx.restore();
     }
 
 }
