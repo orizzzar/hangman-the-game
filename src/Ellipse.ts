@@ -122,7 +122,7 @@ class Ellipse {
     public drawCircle(ctx: CanvasRenderingContext2D) {
         ctx.save();
         ctx.beginPath();
-        ctx.rect(this.x, this.y, this.radiusX, this.radiusY);
+        ctx.ellipse(this.x, this.y, this.radiusX, this.radiusY, this.rotation, this.startAngle, this.endAngle);
         if (this.fill) {
             ctx.fillStyle = this.fillStyle;
             ctx.fill();
